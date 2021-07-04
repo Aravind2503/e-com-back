@@ -1,0 +1,49 @@
+POST http://localhost:9001/users
+Content-Type: application/json
+
+{
+    "name": "user3",
+    "email": "user3@email.com",
+    "password": "user3pass",
+    "age": "20"
+}
+
+###
+
+GET http://localhost:9001/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGNmNWRlYWE2NWEwYTM3ZWM4ZThkZjEiLCJpYXQiOjE2MjQyMDI3MzB9.K14Aii80wOfJ3CdLImKxJCY3o1M6nFTT9LJtE6cFtP8
+
+
+###
+POST http://localhost:9001/users/login
+Content-Type: application/json
+
+{
+    "email": "user1@email.com",
+    "password": "user1pass"
+}
+
+###
+GET http://localhost:9001/cart/ 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGNmNWRlYWE2NWEwYTM3ZWM4ZThkZjEiLCJpYXQiOjE2MjQyMDI3MzB9.K14Aii80wOfJ3CdLImKxJCY3o1M6nFTT9LJtE6cFtP8
+
+
+###
+POST http://localhost:9001/products/search
+Content-Type: application/json
+
+{
+    "name": "ipad"
+}
+
+
+###
+GET http://localhost:9001/cart/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGNmNWRlYWE2NWEwYTM3ZWM4ZThkZjEiLCJpYXQiOjE2MjQzNzg2NTl9.T1d5BrU562vk6PS2gCoC7yJKcu3pKufhZOJL9Gwt52M
+
+####
+GET http://localhost:9001/order/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGNmNWRlYWE2NWEwYTM3ZWM4ZThkZjEiLCJpYXQiOjE2MjU0MDI4MDN9.QRRYcoY6ewPsnFaYBycFUsqNmzVRGvpE6XRtYnk5uqs
+
+
+
