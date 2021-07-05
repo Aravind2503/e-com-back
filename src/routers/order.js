@@ -30,6 +30,7 @@ router.post("/order", auth, async (req, res) => {
     const { email } = req.user;
 
     const newOrderHistory = req.body.history;
+    const address = req.body.address;
     let order = await Order.findOne({ email });
     console.log("Order", order);
     if (!order) {
@@ -39,8 +40,9 @@ router.post("/order", auth, async (req, res) => {
 
     if (order) {
         console.log("IN ORDER POST", newOrderHistory);
-        if (order.history) order.history.unshift({ products: newOrderHistory });
-        else order.history = [{ products: newOrderHistory }];
+        if (order.history)
+            order.history.unshift({ products: newOrderHistory, address });
+        else order.history = [{ products: newOrderHistory, address }];
         await order.save();
     }
 });

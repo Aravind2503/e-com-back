@@ -4,6 +4,8 @@ const validator = require("validator");
 const historySchema = new mongoose.Schema(
     {
         products: Object,
+        extraInfo: Object,
+        address: String,
     },
     {
         timestamps: true,
